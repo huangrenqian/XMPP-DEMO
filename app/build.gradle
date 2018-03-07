@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.huang.testxmpp"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+    // XMPP
+    compile files('libs/fscontext.jar')
+    compile files('libs/providerutil.jar')
+    compile files('libs/xpp3-1.1.6.jar')
+    compile 'de.measite.minidns:minidns-hla:0.2.2'
+    compile files('libs/smack-android-4.2.1.jar')
+    compile files('libs/smack-core-4.2.1.jar')
+    compile files('libs/smack-extensions-4.2.1.jar')
+    compile files('libs/smack-im-4.2.1.jar')
+    compile files('libs/smack-resolver-minidns-4.2.1.jar')
+    compile files('libs/smack-sasl-provided-4.2.1.jar')
+    compile files('libs/smack-tcp-4.2.1.jar')
+    compile files('libs/smack-android-extensions-4.2.1.jar')
+    compile files('libs/jxmpp-jid-0.5.0.jar')
+    compile files('libs/jxmpp-core-0.5.0.jar')
+    compile files('libs/jxmpp-util-cache-0.5.0.jar')
+    // butterknife
+    compile files('libs/butterknife-7.0.1.jar')
+    // retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    // rxandroid
+    compile 'io.reactivex:rxandroid:1.2.0'
+    // recyclerview
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    // gson
+    compile 'com.google.code.gson:gson:2.8.2'
+}

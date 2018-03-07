@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/main_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbar_layout" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/home_group"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/home_radio_data"
+            style="@style/radio_btn_style"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawableTop="@drawable/home_1"
+            android:padding="2dp"
+            android:text="@string/home_bottom_tx_1"
+            android:textColor="#ffffffff" />
+
+        <RadioButton
+            android:id="@+id/home_radio_project"
+            style="@style/radio_btn_style"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/home_2"
+            android:padding="2dp"
+            android:text="@string/home_bottom_tx_2"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/home_radio_outpatient"
+            style="@style/radio_btn_style"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/home_3"
+            android:padding="2dp"
+            android:text="@string/home_bottom_tx_3"
+            android:textColor="#ffffffff" />
+
+        <RadioButton
+            android:id="@+id/home_radio_recommend"
+            style="@style/radio_btn_style"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/home_4"
+            android:padding="2dp"
+            android:text="@string/home_bottom_tx_4"
+            android:textColor="#ffffffff" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/homeFragmentContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/home_group"
+        android:layout_below="@id/main_relativeLayout" />
+
+</RelativeLayout>
